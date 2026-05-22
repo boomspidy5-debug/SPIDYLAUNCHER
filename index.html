@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SPIDER Launcher by Hassan Raza</title>
+
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SPIDER Launcher | Free Classic PC Games Download</title>
+
+<!-- SEO META -->
+<meta name="description" content="Download classic PC games like TrackMania, FIFA 12, and Prince of Persia. SPIDER Launcher offers free lightweight games for low-end PCs.">
+<meta name="keywords" content="free pc games, download games, trackmania download, fifa 12 pc, prince of persia pc, low end pc games, old pc games free">
+<meta name="author" content="SPIDER">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (Social Media Preview) -->
+<meta property="og:title" content="SPIDER Launcher - Free PC Games">
+<meta property="og:description" content="Download lightweight classic PC games for free including FIFA 12, TrackMania, Prince of Persia.">
+<meta property="og:type" content="website">
+
+<meta name="theme-color" content="#00ff99">
+
+<!-- Canonical (important for SEO ranking) -->
+<link rel="canonical" href="https://your-site-link.com">
+
+</head>
+<title>SPIDER STORE</title>
+<header>
+<header>
+    SPIDER LAUNCHER
+    <button class="admin-btn" onclick="openAdminLogin()">Admin</button>
+</header>
+</header>
+
+
+<style>
+
+header{
+    position: relative;
+}
+
+/* ADMIN BUTTON TOP RIGHT */
+.admin-btn{
+    position: absolute;
+    top: 40px;
+    right: 10pxPX;
+    padding: 8px 12px;
+    background: #00ff99;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+}
+
+/* HEADER */
+header{
+    background:#151515;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    border-bottom:2px solid #00ff99;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero h1{
+    color:#00ff99;
+    font-size:40px;
+}
+
+.hero p{
+    color:#bbb;
+}
+
+/* GRID */
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+/* CARD */
+.card{
+    background:#1a1a1a;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid #2a2a2a;
+}
+
+/* IMAGE FIX (SHOW FULL IMAGE) */
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+    background:#000;
+    cursor:pointer;
+}
+
+/* CONTENT */
+.card-content{
+    padding:15px;
+}
+
+.card-content h2{
+    color:#00ff99;
+    margin-bottom:10px;
+}
+
+/* BUTTONS */
+.btn{
+    display:block;
+    text-align:center;
+    padding:10px;
+    margin-top:10px;
+    border-radius:8px;
+    font-weight:bold;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.download-btn{
+    background:#00ff99;
+    color:black;
+}
+
+.req-btn{
+    background:#333;
+    color:white;
+}
+
+/* STAR RATING */
+.stars{
+    display:flex;
+    justify-content:center;
+    gap:5px;
+    margin-top:10px;
+}
+
+.star{
+    font-size:20px;
+    cursor:pointer;
+    color:#555;
+}
+
+.star.active{
+    color:gold;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-box{
+    background:#1a1a1a;
+    padding:20px;
+    width:90%;
+    max-width:400px;
+    border-radius:10px;
+    border:1px solid #00ff99;
+}
+
+.close{
+    float:right;
+    cursor:pointer;
+    color:red;
+    font-size:20px;
+}
+
+/* REVIEWS */
+.reviews{
+    padding:30px;
+    background:#111;
+    margin-top:20px;
+}
+
+.review-box{
+    background:#1a1a1a;
+    padding:10px;
+    margin-top:10px;
+    border-radius:8px;
+    border:1px solid #333;
+}
+
+/* COMMENT BOX */
+.comment-section{
+    padding:30px;
+}
+
+textarea{
+    width:100%;
+    height:80px;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+}
+
+button{
+    margin-top:10px;
+    padding:10px;
+    background:#00ff99;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    border-top:1px solid #222;
+    color:#777;
+}
+</style>
+</head>
+
+<!-- ADMIN LOGIN MODAL -->
+<div class="modal" id="adminLogin">
+  <div class="modal-box">
+    <span class="close" onclick="closeAdminLogin()">?</span>
+    <h2>Admin Login</h2>
+    <input type="password" id="adminPass" placeholder="Enter password" style="width:100%;padding:10px;margin-top:10px;">
+    <button onclick="checkAdmin()" style="width:100%;margin-top:10px;">Login</button>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="modal" id="adminPanel">
+  <div class="modal-box">
+    <span class="close" onclick="closeAdminPanel()">?</span>
+    <h2>Admin Panel - Add Game</h2>
+
+    <input id="gName" placeholder="Game Name" style="width:100%;padding:8px;margin-top:5px;">
+    <input id="gImg" placeholder="Image URL" style="width:100%;padding:8px;margin-top:5px;">
+    <input id="gLink" placeholder="Download Link" style="width:100%;padding:8px;margin-top:5px;">
+    <input id="gReq" placeholder="System Requirements" style="width:100%;padding:8px;margin-top:5px;">
+
+    <button onclick="addGame()" style="width:100%;margin-top:10px;">Add Game</button>
+  </div>
+</div>
+
+
+
+<body>
+
+<header>BOOMSPIDY LAUNCHER</header>
+
+<h1 style="display:none;">Free PC Games Download - BOOMSPIDY Launcher</h1>
+
+<section class="hero">
+    <h1>Download Classic Games</h1>
+    <p>Best lightweight games for PC</p>
+</section>
+
+<section class="games">
+
+<!-- TRACKMANIA -->
+<div class="card">
+<img src="https://m.media-amazon.com/images/M/MV5BNmE3YmFkZTItNTQxNC00NWZlLWI0NDctZjM2Yzk4ZTJlODAyXkEyXkFqcGc@._V1_.jpg">
+
+<div class="card-content">
+<h2>TrackMania</h2>
+
+<a class="btn download-btn" href="https://drive.google.com/file/d/148AUjUi62aaNk3swictR8TIppaoqVDCB/view?usp=drive_link">Download</a>
+
+<div class="btn req-btn" onclick="openModal('TrackMania','CPU: Dual Core<br>RAM: 2GB<br>GPU: 512MB<br>Storage: 1GB')">
+System Requirements
+</div>
+
+<div class="stars" onclick="rate(this)">
+<span class="star">?</span><span class="star">?</span><span class="star">?</span><span class="star">?</span><span class="star">?</span>
+</div>
+
+</div>
+</div>
+
+<!-- PRINCE OF PERSIA -->
+<div class="card">
+<img src="https://i.redd.it/f77o7kdkm1j31.jpg">
+
+<div class="card-content">
+<h2>Prince of Persia</h2>
+
+<a class="btn download-btn"
+href="https://drive.google.com/uc?export=download&id=15Wpuw5dABRDUnLTN9UqN3Qb2Hf93aT7N">
+Download
+</a>
+
+<div class="btn req-btn" onclick="openModal('Prince of Persia','CPU: Pentium 4<br>RAM: 1GB<br>GPU: 128MB<br>Storage: 3GB')">
+System Requirements
+</div>
+
+<div class="stars" onclick="rate(this)">
+<span class="star">?</span><span class="star">?</span><span class="star">?</span><span class="star">?</span><span class="star">?</span>
+</div>
+
+</div>
+</div>
+
+<!-- FIFA -->
+<div class="card">
+<img src="https://archive.org/download/fifa-12-1xbd/AA_FIFA12.jpg">
+
+<div class="card-content">
+<h2>FIFA 12</h2>
+
+<a class="btn download-btn"
+href="https://drive.google.com/uc?export=download&id=1lkgJJby-VuaPrku4sArpBFpv_wlgaM8q">
+Download
+</a>
+
+<div class="btn req-btn" onclick="openModal('FIFA 12','CPU: Dual Core<br>RAM: 2GB<br>GPU: 256MB<br>Storage: 6GB')">
+System Requirements
+</div>
+
+<div class="stars" onclick="rate(this)">
+<span class="star">?</span><span class="star">?</span><span class="star">?</span><span class="star">?</span><span class="star">?</span>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-box">
+<span class="close" onclick="closeModal()">?</span>
+<h2 id="title"></h2>
+<p id="req"></p>
+</div>
+</div>
+
+<!--how to install-->
+<section class="install">
+<h2>how to install??</h2>
+
+<div class="install-box"> if an page pops up saying you need access just click on "view document directly" and you are good to go  ??</div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+<h2>??  Reviews</h2>
+
+
+
+<div class="review-box">“Best games ever! runs smoothly ??”</div>
+<div class="review-box">“Old games revived perfectly ??”</div>
+<div class="review-box">“Love the UI and simplicity!”</div>
+
+</section>
+
+<!-- COMMENT -->
+<section class="comment-section">
+<h2>?? Leave a Comment</h2>
+<textarea placeholder="Write your comment..."></textarea>
+<button onclick="alert('Comment submitted (demo only)')">Submit</button>
+</section>
+
+
+<footer>
+Created by Hassan Raza • BOOMSPIDY Launcher
+</footer>
+
+<script>
+
+function openModal(title, req){
+    document.getElementById("modal").style.display="flex";
+    document.getElementById("title").innerHTML=title;
+    document.getElementById("req").innerHTML=req;
+}
+
+function closeModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+window.onclick=function(e){
+    if(e.target==document.getElementById("modal")){
+        closeModal();
+    }
+}
+
+/* STAR RATING */
+function rate(el){
+    let stars = el.querySelectorAll(".star");
+    stars.forEach((s,i)=>{
+        s.onclick = () => {
+            stars.forEach(x=>x.classList.remove("active"));
+            for(let j=0;j<=i;j++){
+                stars[j].classList.add("active");
+            }
+        }
+    });
+}
+
+
+const ADMIN_PASSWORD = "47ada3f2";
+
+/* OPEN LOGIN */
+function openAdminLogin(){
+    document.getElementById("adminLogin").style.display="flex";
+}
+
+function closeAdminLogin(){
+    document.getElementById("adminLogin").style.display="none";
+}
+
+/* CHECK PASSWORD */
+function checkAdmin(){
+    let pass = document.getElementById("adminPass").value;
+
+    if(pass === ADMIN_PASSWORD){
+        closeAdminLogin();
+        document.getElementById("adminPanel").style.display="flex";
+    } else {
+        alert("Wrong password!");
+    }
+}
+
+function closeAdminPanel(){
+    document.getElementById("adminPanel").style.display="none";
+}
+
+/* ADD GAME DYNAMICALLY */
+function addGame(){
+    let name = document.getElementById("gName").value;
+    let img = document.getElementById("gImg").value;
+    let link = document.getElementById("gLink").value;
+    let req = document.getElementById("gReq").value;
+
+    if(!name || !img || !link) {
+        alert("Fill all required fields!");
+        return;
+    }
+
+    let gameHTML = `
+    <div class="card">
+        <img src="${img}">
+        <div class="card-content">
+            <h2>${name}</h2>
+
+            <a class="btn download-btn" href="${link}" target="_blank">Download</a>
+
+            <div class="btn req-btn" onclick="openModal('${name}','${req}')">
+                System Requirements
+            </div>
+
+            <div class="stars" onclick="rate(this)">
+                <span class="star">?</span><span class="star">?</span>
+                <span class="star">?</span><span class="star">?</span>
+                <span class="star">?</span>
+            </div>
+        </div>
+    </div>`;
+
+    document.querySelector(".games").innerHTML += gameHTML;
+
+    alert("Game added successfully!");
+    closeAdminPanel();
+}
+
+</script>
+
+</body>
+</html>
